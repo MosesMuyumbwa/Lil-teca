@@ -1,0 +1,131 @@
+
+
+*HTML*
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muyu Learning</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 style="color: gray;">Muyu <span style="color: green;">Learning</span></h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search...">
+            <button id="searchButton">Search</button>
+        </div>
+    </header>
+    
+    <main>
+        <section id="content">
+            <h2>MP4 Content</h2>
+            <video width="320" height="240" controls>
+                <source src="content.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <button id="uploadButton">Upload Content</button>
+            <button id="saveButton">Save Content</button>
+            <button id="downloadButton">Download Content</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+*CSS (in styles.css file)*
+```
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 1em;
+    text-align: center;
+}
+
+.search-container {
+    margin-top: 10px;
+}
+
+#searchInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+#searchButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#content {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+```
+
+*JavaScript (in script.js file)*
+```
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const uploadButton = document.getElementById('uploadButton');
+const saveButton = document.getElementById('saveButton');
+const downloadButton = document.getElementById('downloadButton');
+
+searchButton.addEventListener('click', async () => {
+    const query = searchInput.value.trim();
+    if (query) {
+        try {
+            const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=YOUR_GOOGLE_CUSTOM_SEARCH_API_KEY&cx=YOUR_SEARCH_ENGINE_ID&q=${query}`);
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error fetching search results:', error);
+        }
+    }
+});
+
+uploadButton.addEventListener('click', () => {
+    // Handle file upload logic here
+});
+
+saveButton.addEventListener('click', () => {
+    // Handle content saving logic here
+});
+
+downloadButton.addEventListener('click', () => {
+    // Handle content downloading logic here
+});
+```
+
+This code provides a basic structure for your website, including a search tab, MP4 content, and buttons for uploading, saving, and downloading content. You'll need to implement the logic for these features using JavaScript and potentially a backend technology like Node.js.
+
+To get information from Google, you'll need to use the Google Custom Search JSON API. You'll need to replace `YOUR_GOOGLE_CUSTOM_SEARCH_API_KEY` and `YOUR_SEARCH_ENGINE_ID` with your actual API key and search engine ID.
+
+Please note that this is a basic example and might need adjustments based on your specific requirements.<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    
+    Successes doesnt chose you,you chose it.
+  </h1>
+</body>
+</html>
